@@ -1,0 +1,951 @@
+:root {
+    --primary-color: #095c5f;
+    --secondary-color: #123544;
+    --accent-color: #f83504;
+    --text-color: #333;
+    --background-color: #102029;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image:  url(/misiones/img/banderamexico.jpg);
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 150px; /* Ajusta esto según tus necesidades */
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/misiones/img/banderamexico.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9; /* Ajusta la opacidad para que el texto sea legible */
+    z-index: -1;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(31, 32, 8, 0.7); /* Color primario con transparencia */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: rgb(248, 248, 248);
+    text-decoration: dashed;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 100;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(255, 0, 0, 0.5); /* Sombra para mejorar legibilidad */
+    font-size: 20px; /* Aquí ajusta el tamaño de la letra según tu preferencia */
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    padding-top: 70px; /* Ajusta esto para que coincida con la altura del header */
+}
+
+section {
+    padding: 4rem 2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.home-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.home-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.6);
+    z-index: 1;
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.organization {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.org-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.org-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.project-motto {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.divider {
+    width: 50%;
+    height: 2px;
+    background-color: rgb(255, 77, 0);
+    margin: 2rem auto;
+}
+
+.author-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .project-motto {
+        font-size: 1.2rem;
+    }
+
+    .author-name {
+        font-size: 1.4rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-content > * {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.home-content > *:nth-child(1) { animation-delay: 0.2s; }
+.home-content > *:nth-child(2) { animation-delay: 0.4s; }
+.home-content > *:nth-child(3) { animation-delay: 0.6s; }
+.home-content > *:nth-child(4) { animation-delay: 0.8s; }
+.home-content > *:nth-child(5) { animation-delay: 1s; }
+.testimonio-container {
+    position: relative;
+    padding: 4rem 2rem;
+    overflow: hidden;
+    background-color: #d4dede;
+}
+
+.testimonio-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/api/placeholder/1200/800');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.testimonio-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonio-image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.animal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/api/placeholder/200/200');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
+    animation: animalMove 20s infinite alternate;
+}
+
+@keyframes animalMove {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+.testimonio-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #16454b;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonio-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+}
+
+.testimonio-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.testimonio-button {
+    background-color: #14888c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.testimonio-button:hover {
+    background-color: #0b2f53;
+    transform: translateY(-3px);
+}
+.pdf-download-container {
+    position: relative;
+    padding: 6rem 2rem;
+    overflow: hidden;
+    background-color: #f0f4f8;
+}
+
+.pdf-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/api/placeholder/1200/800');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.pdf-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #107e8c;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-content p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.pdf-download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d6176;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-download-button:hover {
+    background-color: #13384f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button-text {
+    margin-right: 10px;
+}
+
+.button-icon {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .pdf-download-container {
+        padding: 4rem 1rem;
+    }
+
+    .pdf-content {
+        padding: 2rem;
+    }
+
+    .pdf-content h2 {
+        font-size: 2rem;
+    }
+
+    .pdf-download-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+    }
+}
+
+#missions {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    color: #b6b6b6;
+    margin-bottom: 2rem;
+}
+
+.mission-card {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.mission-image {
+    width: 100%;
+    height: 150px;
+    object-fit:cover;
+}
+
+.mission-content {
+    padding: 2rem;
+}
+
+.mission-title {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.mission-axis, .mission-sustent {
+    margin-bottom: 2rem;
+}
+
+.mission-axis h3, .mission-sustent h3 {
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+ol {
+    padding-left: 1.5rem;
+}
+
+.development {
+    position: relative;
+}
+
+.background-container {
+    background-image: url('/misiones/img/plasa.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+}
+
+.content-overlay {
+    background-color: rgba(42, 43, 43, 0.9);
+    padding: 2rem;
+    height: 100%;
+}
+
+.main-title {
+    font-size: 1.8rem;
+    color: #fafafa;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    text-align: center;
+    color: #87d1cd;
+    margin-bottom: 2rem;
+}
+
+.project-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.stage {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.stage:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.stage h4 {
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .mission-image {
+        height: 200px;
+    }
+    
+    .mission-content {
+        padding: 1rem;
+    }
+}
+
+#gallery {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+    height: 100%;
+}
+
+.gallery-overlay p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .gallery-item {
+        flex-basis: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-item {
+        flex-basis: calc(33.333% - 1.333rem);
+    }
+}
+
+
+
+#contact {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 3rem;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #1a4f45;
+    margin-right: 1rem;
+    width: 20px;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #164c4f;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-media a:hover {
+    background-color: #ff0000;
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #070b10;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #08222c;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .contact-info {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+footer {
+    background-color:#0c1318;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #00fe33;
+    color: #636566;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #090707;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #ff0000;
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    margin-top: 4px;
+    font-size: 38px;
+}
+
+/* Estilos para el ícono de WhatsApp usando Unicode */
+.whatsapp-icon::before {
+    content: "\1F4AC"; /* Código Unicode para el ícono de chat */
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@media screen and (max-width: 767px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+    
+    .whatsapp-icon {
+        font-size: 32px;
+    }
+}
+/* Estilos generales para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        height: auto;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .home-content {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .project-motto {
+        font-size: 1.2rem;
+    }
+
+    .author-name {
+        font-size: 1.4rem;
+    }
+
+    .testimonio-image-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .testimonio-content h3 {
+        font-size: 2rem;
+    }
+
+    .pdf-content {
+        padding: 2rem 1rem;
+    }
+
+    .pdf-content h2 {
+        font-size: 2rem;
+    }
+
+    .pdf-download-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+    }
+
+    .mission-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .gallery-item {
+        flex-basis: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .contact-info {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Estilos para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .home-content {
+        padding: 0.5rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .project-motto {
+        font-size: 1rem;
+    }
+
+    .author-name {
+        font-size: 1.2rem;
+    }
+
+    .testimonio-image-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimonio-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .pdf-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .pdf-download-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+}
+
+
+footer a {
+    color: #9f50f8; /* Color del enlace */
+    text-decoration: none; /* Quitar subrayado */
+}
+footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+/* Ajustes adicionales para mejorar la responsividad */
+.mission-image {
+    height: auto;
+    max-height: 200px;
+}
+
+.gallery-image {
+    height: auto;
+    max-height: 250px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 16px; /* Evita el zoom automático en iOS */
+}
+
+/* Mejora la legibilidad en dispositivos móviles */
+.testimonio-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Ajusta el tamaño del botón de WhatsApp para dispositivos pequeños */
+@media screen and (max-width: 480px) {
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 22px;
+    }
+    
+    .whatsapp-icon {
+        font-size: 28px;
+    }
+}
